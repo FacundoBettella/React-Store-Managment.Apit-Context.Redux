@@ -1,14 +1,16 @@
-import { useEffect, useReducer } from "react";
-import { useForm } from "../hooks/useForm";
-import { todoReducer } from "./todoReducer";
-
-// Obtener info del localStorage
-const init = () => {
-  return JSON.parse(localStorage.getItem("todos")) || [];
-};
+import { useEffect } from "react";
+import { useForm } from "./hooks/useForm";
+import { useDispatch, useSelector } from "react-redux";
+import { addTodo, removeTodo, setTodos } from "./store/todo/todoSlice";
 
 export const TodoApp = () => {
-  const [todos, dispatch] = useReducer(todoReducer, [], init);
+  const dispatch = useDispatch();
+  const { todos } = useSelector((state) => state.todo);
+
+  // Obtener info del localStorage
+  useEffect(() => {
+    dispatch(setTodos(JSON.parse(localStorage.getItem("todos")) || []));
+  }, []);
 
   // Actualización del localStorage
   useEffect(() => {
@@ -17,19 +19,11 @@ export const TodoApp = () => {
 
   // Acciones para modificar el estado
   const handleNewTodo = (todo) => {
-    const action = {
-      type: "[TODO] Add Todo",
-      payload: todo,
-    };
-
-    dispatch(action);
+    dispatch(addTodo(todo));
   };
 
   const handleDeleteTodo = (id) => {
-    dispatch({
-      type: "[TODO] Remove Todo",
-      payload: id,
-    });
+    dispatch(removeTodo(id));
   };
 
   // Hook para manipular el formulario

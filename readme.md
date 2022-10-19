@@ -2,4 +2,4 @@
 
 ## yarn dev (levanta el proyecto)
 
-# useReducer()
+# Redux toolkit
