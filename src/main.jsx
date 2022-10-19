@@ -1,12 +1,17 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
+import App from "./App";
+import { TodoProvider } from "./context";
+import { AppContextPractice } from "./re-renderExample/ExampleApp";
 import "./index.css";
-import "./useReducer/intro-reducer";
-import { TodoApp } from "./useReducer/TodoApp";
+
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <BrowserRouter>
-    <TodoApp />
+    <AppContextPractice />
+    <TodoProvider>
+      <App />
+    </TodoProvider>
   </BrowserRouter>
 );
