@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Title } from "./components/Title";
 import Todos from "./components/Todos";
+import { TodoProvider } from "./context/Context";
 
 const containerStyle = {
   display: "flex",
@@ -9,15 +10,16 @@ const containerStyle = {
   alignItems: "center",
 };
 
-const App = () => {
-  const [todos, setTodos] = useState([]);
+const AppContextWithReducer = () => {
 
   return (
-    <div style={containerStyle}>
-      <Title todosLength={todos.length} />
-      <Todos todos={todos} setTodos={setTodos} />
-    </div>
+    <TodoProvider>
+      <div style={containerStyle}>
+        <Title/>
+        <Todos/>
+      </div>
+    </TodoProvider>
   );
 };
 
-export default App;
+export default AppContextWithReducer;

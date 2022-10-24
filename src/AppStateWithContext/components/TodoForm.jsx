@@ -1,19 +1,22 @@
 import React, { useContext, useState } from "react";
-import { TodoContext } from "../context";
+import { TodoContext } from "../context/Context";
 
-const TodoForm = ({ _setTodos }) => {
+const TodoForm = () => {
+  
   const [description, setDescription] = useState("");
-
   const { addTodo } = useContext(TodoContext);
 
+  // Metodo para actualizar el estado del input descripcion
   const onInputChange = (e) => {
     e.preventDefault();
     const todo = e.target.value;
     setDescription(todo);
   };
 
+  // Metodo que se ejecuta al hacer submit del formulario
   const onFormSubmit = (e) => {
     e.preventDefault();
+    if(description.length <= 0) return
     const newTodo = {
       id: crypto.randomUUID(),
       description: description,

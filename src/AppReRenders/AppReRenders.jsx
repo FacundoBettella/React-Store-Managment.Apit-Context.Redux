@@ -65,7 +65,7 @@ const Count = () => {
   );
 };
 
-export const AppContextPractice = () => {
+const AppReRenders = () => {
   return (
     <div>
       <AppProvider>
@@ -79,3 +79,5 @@ export const AppContextPractice = () => {
     </div>
   );
 };
+
+export default AppReRenders;

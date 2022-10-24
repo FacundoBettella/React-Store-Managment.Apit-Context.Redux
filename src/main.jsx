@@ -1,17 +1,18 @@
-import React from "react";
+import React, { Fragment } from "react";
 import ReactDOM from "react-dom/client";
-import { BrowserRouter } from "react-router-dom";
-import App from "./App";
-import { TodoProvider } from "./context";
-import { AppContextPractice } from "./re-renderExample/ExampleApp";
+
+import AppWithPropDrilling from "./AppWithPropDrilling/AppWithPropDrilling";
+import AppStateWithContext from "./AppStateWithContext/AppStateWithContext"; 
+import AppContextWithReducer from "./AppContextWithReducer/AppContextWithReducer";
+import AppReRenders from "./AppReRenders/AppReRenders";
+
 import "./index.css";
 
-
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <BrowserRouter>
-    {/* <AppContextPractice /> */}
-    <TodoProvider>
-      <App />
-    </TodoProvider>
-  </BrowserRouter>
+  <Fragment>
+      <AppWithPropDrilling />
+      {/* <AppStateWithContext /> */}
+      {/* <AppContextWithReducer /> */}
+      {/*  <AppReRenders /> */}
+  </Fragment>
 );

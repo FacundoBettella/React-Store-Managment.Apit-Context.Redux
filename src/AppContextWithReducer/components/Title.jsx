@@ -1,7 +1,8 @@
 import React, { useContext } from "react";
-import { TodoContext } from "../context";
+import { TodoContext } from "../context/Context";
 
-export const Title = ({ todosLength }) => {
+export const Title = () => {
+
   const { todos } = useContext(TodoContext);
 
   return (

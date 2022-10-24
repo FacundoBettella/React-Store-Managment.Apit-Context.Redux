@@ -2,11 +2,11 @@ import React, { Fragment } from "react";
 import TodoForm from "./TodoForm";
 import TodoList from "./TodoList";
 
-const Todos = ({ todos, setTodos }) => {
+const Todos = () => {
   return (
     <Fragment>
-      <TodoList _todos={todos}/>
-      <TodoForm _setTodos={setTodos}/>
+      <TodoList/>
+      <TodoForm/>
     </Fragment>
   );
 };
