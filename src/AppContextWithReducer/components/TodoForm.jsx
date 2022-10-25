@@ -7,7 +7,6 @@ const TodoForm = () => {
 
   // Metodo para actualizar el estado del input descripcion
   const onInputChange = (e) => {
-    e.preventDefault();
     const todo = e.target.value;
     setDescription(todo);
   };

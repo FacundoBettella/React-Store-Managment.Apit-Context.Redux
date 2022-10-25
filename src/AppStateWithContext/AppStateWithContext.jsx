@@ -1,6 +1,6 @@
 import React from "react";
+import ContainerTodos from "./components/ContainerTodos";
 import { Title } from "./components/Title";
-import Todos from "./components/Todos";
 import { TodoProvider } from "./context/Context";
 
 const containerStyle = {
@@ -16,7 +16,7 @@ const AppStateWithContext = () => {
     <TodoProvider>
       <div style={containerStyle}>
         <Title/>
-        <Todos/>
+        <ContainerTodos/>
       </div>
     </TodoProvider>
   );

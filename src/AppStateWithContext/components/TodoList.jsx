@@ -28,7 +28,7 @@ const TodoList = () => {
           </li>
         ))}
         
-{/*           <TodoContext.Consumer>
+       {/* <TodoContext.Consumer>
             {
               ({todos, deleteTodo}) => {
                 return (
@@ -47,7 +47,7 @@ const TodoList = () => {
                     </li>
                 )))}
             }
-          </TodoContext.Consumer>  */} 
+          </TodoContext.Consumer> */}
       </ul>
     </div>
   );
