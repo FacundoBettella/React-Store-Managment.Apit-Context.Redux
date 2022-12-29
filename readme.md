@@ -1,5 +1,7 @@
-## yarn (instala dependencias)
+## yarn
 
-## yarn dev (levanta el proyecto)
+## yarn dev 
 
-# useReducer()
+## Branch: 
+    Redux-toolkit
+    Context 
